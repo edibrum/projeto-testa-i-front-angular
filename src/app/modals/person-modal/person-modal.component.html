@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{Title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #editForm="ngForm" (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="person.name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" class="form-control" [(ngModel)]="person.cpf" name="cpf" required>
+      </div>
+      <div class="form-group">
+        <label for="birthDate">Nascimento</label>
+        <input type="date" id="birthDate" class="form-control" [(ngModel)]="person.birthDate" name="birthDate" required>
+      </div>
+      <div class="form-group">
+        <label for="employee">Funcionário</label>
+        <input type="checkbox" id="employee" [(ngModel)]="person.employee" name="employee">
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </div>

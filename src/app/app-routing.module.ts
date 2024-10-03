@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmployeeComponent } from './pages/employee/employee.component';
-import { TodoComponent } from './pages/todo/todo.component';
-import { UsersComponent } from './pages/users/users.component';
+import { PersonComponent } from './pages/person/person.component';
+import { ProjectComponent } from './pages/project/project.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  {
-    path:'users',
-    component: UsersComponent
-  },
-  {
-    path:'Employee',
-    component: EmployeeComponent
-  },
-  {
-    path: 'todo',
-    component: TodoComponent
-  }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PersonComponent },
+  { path: 'projects', component: ProjectComponent }
+
 ];
 
 @NgModule({

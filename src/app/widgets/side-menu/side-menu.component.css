@@ -1,0 +1,37 @@
+@import url('../../../styles.css');
+
+.menu {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menu-content {
+  width: auto;
+  background-color: #e3f95595;
+  padding: 20px;
+}
+
+.menu-button {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.menu-button:hover {
+  background-color: #e6b800;
+}
+
+.menu-button i {
+  margin-left: 16px;
+  margin-right: 16px;
+}

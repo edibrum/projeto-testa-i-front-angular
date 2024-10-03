@@ -1,0 +1,12 @@
+<div class="main-container">
+    <app-side-menu></app-side-menu>
+    <div class="main-content">
+        <h1>{{ title }}</h1>
+        <p>{{ message }}</p>
+        <app-complex-table [Columns]="columns" [DataList]="projectList"
+            (onView)="viewProject($event)"
+            (onEdit)="editProject($event)"  
+            (onDelete)="deleteProject($event)">
+            </app-complex-table>
+    </div>
+</div>
