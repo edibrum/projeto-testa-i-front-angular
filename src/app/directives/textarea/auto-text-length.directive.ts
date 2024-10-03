@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import {} from '@angular/common/http';
 import { Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Directive({

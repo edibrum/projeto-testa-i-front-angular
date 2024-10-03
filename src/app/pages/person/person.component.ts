@@ -46,7 +46,7 @@ export class PersonComponent implements OnInit {
   }
 
   editPerson(item: any) {
-    const modalRef = this.modalService.open(PersonModalComponent);
+    const modalRef = this.modalService.open(PersonModalComponent, { centered: true });
     modalRef.componentInstance.person = { ...item };
 
     modalRef.result.then((updatedPerson: Person) => {

@@ -9,7 +9,7 @@ import { Person } from 'src/app/models/person.model';
 })
 export class PersonModalComponent implements OnInit {
     Title: string = 'Editar Pessoa'
-  @Input() person: Person;
+  @Input() person!: Person;
 
   constructor(public activeModal: NgbActiveModal) {}
 

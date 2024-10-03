@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Person } from '../models/person.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,18 +21,27 @@ export class ApiService {
     return headers;
   }
 
+  //Person
   getPeopleListAll(): Observable<any> {
     return this.http.get(`${this.baseUrl}/person/list-all`, {
       headers: this.createAuthorizationHeader()
     });
   }
 
+  updatePerson(data: Person): Observable<any> {
+    return this.http.put(`${this.baseUrl}/person/save`, data, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  //Project
   getProjectsListAll(): Observable<any> {
     return this.http.get(`${this.baseUrl}/projec/list-all`, {
       headers: this.createAuthorizationHeader()
     });
   }
 
+  //ProjectMember
   getProjectMembersListAll(): Observable<any> {
     return this.http.get(`${this.baseUrl}/project-member/list-all`, {
       headers: this.createAuthorizationHeader()
