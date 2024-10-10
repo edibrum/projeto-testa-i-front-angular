@@ -1,1 +1,22 @@
 @import url('../../../styles.css');
+
+
+.create-new-button {
+    background-color:  var(--primary-color);
+    color: white;
+    border: 2px solid white;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 12px;
+    transition: background-color 0.3s;
+    position: fixed;
+    top: 10%;
+    left: 90%;
+    font-size: medium;
+    width: 60px;
+  }
+
+  .create-new-button:hover {
+    background-color: var(--primary-color-three);
+  }

@@ -1,0 +1,80 @@
+<div class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+                <button type="button" class="close modal-close-button" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editForm" (ngSubmit)="create()">
+
+                    <div class="form-group w-100">
+                        <label for="name">Nome</label>
+                        <input 
+                          type="text" 
+                          id="name" 
+                          class="form-control" 
+                          formControlName="name"
+                        >
+                        <div *ngIf="editForm.controls.name.invalid && editForm.controls.name.touched 
+                        || editForm.controls.name.invalid && submitted" class="invalid-feedback">
+                          * Nome deve ter no mínimo 3 caracteres.
+                        </div>
+                    </div>
+
+                    <div class="form-row w-100">
+                      <div class="form-group w-50">
+                          <label for="cpf">CPF</label>
+                          <input
+                              type="text"
+                              id="cpf"
+                              class="form-control"
+                              formControlName="cpf"
+                              (input)="applyCpfMask($event)"
+                          >
+                          <div *ngIf="editForm.controls.cpf.invalid && editForm.controls.cpf.touched
+                          || editForm.controls.cpf.invalid && submitted" class="invalid-feedback">
+                              * CPF inválido!
+                          </div>
+                      </div>
+
+                      <div class="form-group w-50">
+                          <label for="birthDate">Nascimento</label>
+                          <input 
+                              type="date" 
+                              id="birthDate" 
+                              class="form-control" 
+                              formControlName="birthDate"
+                          >
+                          <div *ngIf="editForm.controls.birthDate.invalid && editForm.controls.birthDate.touched
+                          || editForm.controls.birthDate.invalid && submitted" class="invalid-feedback">
+                            * A pessoa deve ter no mínimo 18 anos.
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row w-100">
+                        <div class="form-group w-50">
+                            <label for="employee" class="checkbox-label">Funcionário
+                                <input type="checkbox" id="employee" class="modal-check-button" formControlName="employee">
+                                <span class="custom-checkbox"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group w-50">
+                            <label for="manager" class="checkbox-label">Gerente
+                                <input type="checkbox" id="manager" class="modal-check-button" formControlName="manager">
+                                <span class="custom-checkbox"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="modal-save-button">Salvar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

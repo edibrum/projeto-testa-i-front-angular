@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/models/person.model';
-import { ApiService } from 'src/app/services/api.service';
-import { PersonModalComponent } from '../../modals/person-modal/person-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ApiService } from 'src/app/services/api.service';
+import { Person } from 'src/app/models/person.model';
+import { EditPersonModalComponent } from '../../modals/person-modals/edit-person-modal/edit-person-modal.component';
+import { DeletePersonModalComponent } from 'src/app/modals/person-modals/delete-person-modal/delete-person-modal.component';
+import { CreatePersonModalComponent } from 'src/app/modals/person-modals/create-person-modal/create-person-modal.component';
 
 
 @Component({
@@ -17,10 +19,10 @@ export class PersonComponent implements OnInit {
   peopleList: Person [] = [];
   
   columns = [
+    {'Title': 'ID', 'Value': 'id' },
     {'Title': 'NOME', 'Value': 'name' },
     {'Title': 'CPF', 'Value': 'cpf' },
-    {'Title': 'Nascimento', 'Value': 'birthDate' },
-    {'Title': 'Funcionário', 'Value': 'employee' } ,
+    {'Title': 'NASCIMENTO', 'Value': 'birthDate' },
     {'Title': 'AÇÕES', 'Value': '' } 
   ];
 
@@ -42,12 +44,17 @@ export class PersonComponent implements OnInit {
   }
 
   viewPerson(item: any) {
-    debugger;
+    const modalRef = this.modalService.open(EditPersonModalComponent, { centered: true });
+    modalRef.componentInstance.title = 'Visualizar Registro de Pessoa';
+    modalRef.componentInstance.person = { ...item };
+    modalRef.componentInstance.onlyView = true;
   }
 
   editPerson(item: any) {
-    const modalRef = this.modalService.open(PersonModalComponent, { centered: true });
+    const modalRef = this.modalService.open(EditPersonModalComponent, { centered: true });
+    modalRef.componentInstance.title = 'Editar Registro de Pessoa';
     modalRef.componentInstance.person = { ...item };
+    modalRef.componentInstance.onlyView = false;
 
     modalRef.result.then((updatedPerson: Person) => {
       if (updatedPerson) {
@@ -60,6 +67,13 @@ export class PersonComponent implements OnInit {
   }
 
   deletePerson(item: any) {
-    debugger;
+    const modalRef = this.modalService.open(DeletePersonModalComponent, { centered: true });
+    modalRef.componentInstance.title = 'Você tem certeza que deseja deletar o registro?';
+    modalRef.componentInstance.person = { ...item };
+  }
+
+  createNewPerson() {
+    const modalRef = this.modalService.open(CreatePersonModalComponent, { centered: true });
+    modalRef.componentInstance.title = 'Visualizar Registro de Pessoa';
   }
 }

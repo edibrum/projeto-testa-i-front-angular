@@ -3,6 +3,11 @@
     <div class="main-content">
         <h1>{{ title }}</h1>
         <p>{{ message }}</p>
+        <div>
+            <button type="button" class="create-new-button" aria-label="New" (click)="createNewPerson()">
+                <span aria-hidden="true">Criar</span>
+            </button>
+        </div>
         <app-complex-table [Columns]="columns" [DataList]="peopleList"
             (onView)="viewPerson($event)"
             (onEdit)="editPerson($event)"  

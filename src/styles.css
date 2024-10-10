@@ -1,11 +1,17 @@
 :root {
     --primary-color: #1a1a2e;
     --primary-color-two: #ffcc00;
+    --primary-color-three: #1A1A86;
+
     --secondary-color: #f0e68c;
-    --secondary-color-two: #F5F5F5;
     --secondary-color-three: #e6b800;
+    --secondary-color-four: #fbf6ac;
+    --secondary-color-five: #F5F5F5;
     --white: #FFFFFF;
     --gray:#333;
+
+    --error-message-color: #e35a5a;
+    --success-message-color: #358449;
 }
 
 
@@ -20,6 +26,7 @@
     flex-direction: column;
     width: 100%;
     background-color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     padding: 20px;
     margin-left: 0;
@@ -32,3 +39,20 @@ h1 {
 p {
     font-size: 1.2em;
 }
+
+.toast-error {
+    background-color: var(--error-message-color) !important;
+  }
+  
+  .toast-success {
+    background-color: var(--success-message-color) !important;
+  }
+
+  .is-invalid {
+    border-color: var(--error-message-color);
+  }
+  
+  .invalid-feedback {
+    color: var(--error-message-color);
+    font-size: 12px;
+  }

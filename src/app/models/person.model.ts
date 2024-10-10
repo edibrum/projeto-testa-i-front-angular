@@ -1,10 +1,11 @@
 export class Person {
-    constructor(
-      public id: number,
-      public name: string,
-      public birthDate: Date,
-      public cpf: string,
-      public employee: boolean,
-      public manager: boolean
+      id: number | null = null;
+      name: string | null = null;
+      birthDate: Date | null = null;
+      cpf: string | null = null;
+      employee: boolean | null = null;
+      manager: boolean | null = null;
+    
+      constructor(
     ) {}
 }

@@ -3,13 +3,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Person } from 'src/app/models/person.model';
 
 @Component({
-  selector: 'app-person-modal',
-  templateUrl: './person-modal.component.html',
-  styleUrls: ['./person-modal.component.css']
+  selector: 'app-edit-person-modal',
+  templateUrl: './edit-person-modal.component.html',
+  styleUrls: ['./edit-person-modal.component.css']
 })
-export class PersonModalComponent implements OnInit {
-    Title: string = 'Editar Pessoa'
+export class EditPersonModalComponent implements OnInit {
+  @Input() title!: string;
   @Input() person!: Person;
+  @Input() onlyView!: boolean;
 
   constructor(public activeModal: NgbActiveModal) {}
 
