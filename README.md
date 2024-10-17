@@ -1,27 +1,38 @@
-# Reusables
+# Projeto Testa i front Angular
+Projeto Proposto - Teste Full Stack (Java + Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17.
+# Proposta apresentada aqui:
+O Projeto foi iniciado usando fork de um projeto antigo que usava a ideia de componentes reutilizáveis para agilizar o processo.
 
-## Development server
+  O original disponível em https://github.com/voidChetan/resuableAngular ainda estava com Angular versão 12.2.17. Aqui alteramos e temos Angular com versão 18 já.
+  
+  A estrutura de pastas atual está um tanto maior e diferente do original também:
+        _____src
+            _____directives...
+            _____modals...
+            _____pages...
+            _____services...
+            _____validators...
+            _____widgets
+                ______complex-table
+                ______side-menu
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Os componentes genéricos permanecem na pasta "widgets", estando já bem alterados como se pode observar.
 
-## Code scaffolding
+# Projeto em fase de desenvolvimento (rodando localmente):
+  Com o respectivo projeto back-end configurado e rodando localmente, verificar em \src\app\services\api.service.ts, o valor de baseUrl ('http://localhost:8080');
+  
+  Use o comando `ng serve` e navegue para `http://localhost:4200/`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  Neste momento basta usar as credenciais fixadas (username = 'userAdmin' e password = 'admin@123') para poder realizar o login e testar a aplicação.
 
-## Build
+# Próximos passos:
+  - no modal 'person-modal', ajustar melhor os campos tipo data;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  - replicar toda a lógina do 'person-modal' agora para o 'project-modal';
 
-## Running unit tests
+  - no 'project-modal' implementar funcionalidade a mais para permitir visualizar/editar/adicionar novos membros do projeto - analisar a estratégia de ter um novo modal para 'project-member modal' ou de implementer uma funcionalidade de expandir abaixo da linha da listagem de projetos;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  - no componente 'complex-table' - implementar a funcionalidade de paginação, permitindo alterar número de registros por pagina e alterar entre diferentes páginas da listagem carregada;
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  - validar sobre os pontos de login, e após alterar no back-end, implementar respectivas alterações no front-end;

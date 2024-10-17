@@ -14,9 +14,8 @@ import { SideMenuComponent } from './widgets/side-menu/side-menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
-import { EditPersonModalComponent } from './modals/person-modals/edit-person-modal/edit-person-modal.component';
 import { DeletePersonModalComponent } from './modals/person-modals/delete-person-modal/delete-person-modal.component';
-import { CreatePersonModalComponent } from './modals/person-modals/create-person-modal/create-person-modal.component';
+import { PersonModalComponent } from './modals/person-modals/person-modal/person-modal.component';
 import { provideNgxMask } from 'ngx-mask';
 
 @NgModule({ 
@@ -29,9 +28,8 @@ import { provideNgxMask } from 'ngx-mask';
         ProjectComponent,
         PersonComponent,
         AutoTextLengthDirective,
-        EditPersonModalComponent,
         DeletePersonModalComponent,
-        CreatePersonModalComponent
+        PersonModalComponent
     ],
     bootstrap: [
         AppComponent

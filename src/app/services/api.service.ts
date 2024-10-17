@@ -34,12 +34,6 @@ export class ApiService {
     });
   }
 
-  updatePerson(data: Person): Observable<any> {
-    return this.http.put(`${this.baseUrl}/person/save`, data, {
-      headers: this.createAuthorizationHeader()
-    });
-  }
-
   deletePerson(personId: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/person/delete/${personId}`, {
       headers: this.createAuthorizationHeader()
