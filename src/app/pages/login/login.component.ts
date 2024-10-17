@@ -16,9 +16,8 @@ export class LoginComponent {
     console.log(`LOGIN()`);
     console.log(`username: ${this.username}`);
     console.log(`password: ${this.password}`);
-    //if (this.username === 'userAdmin' && this.password === 'admin@123') {
-    if (this.username === 'a' && this.password === 'a') {
-      this.router.navigate(['/home']); // Redireciona para a lista de pessoas
+    if (this.username === 'userAdmin' && this.password === 'admin@123') {
+      this.router.navigate(['/home']); // Redireciona para a página inicial
     } else {
       alert('Credenciais inválidas');
     }
