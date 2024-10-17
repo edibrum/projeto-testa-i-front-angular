@@ -7,22 +7,31 @@ O Projeto foi iniciado usando fork de um projeto antigo que usava a ideia de com
   O original disponível em https://github.com/voidChetan/resuableAngular ainda estava com Angular versão 12.2.17. Aqui alteramos e temos Angular com versão 18 já.
   
   A estrutura de pastas atual está um tanto maior e diferente do original também:
-        _____src
-            _____directives...
-            _____modals...
-            _____pages...
-            _____services...
-            _____validators...
-            _____widgets
-                ______complex-table
-                ______side-menu
-
-    Os componentes genéricos permanecem na pasta "widgets", estando já bem alterados como se pode observar.
-
-# Projeto em fase de desenvolvimento (rodando localmente):
-  Com o respectivo projeto back-end configurado e rodando localmente, verificar em \src\app\services\api.service.ts, o valor de baseUrl ('http://localhost:8080');
   
-  Use o comando `ng serve` e navegue para `http://localhost:4200/`.
+        |_____src
+        
+            |_____directives...
+            
+            |_____modals...
+            
+            |_____pages...
+            
+            |_____services...
+            
+            |_____validators...
+            
+            |_____widgets
+            
+                |______complex-table
+                
+                |______side-menu
+
+  Os componentes genéricos permanecem na pasta "widgets", estando já bem alterados como se pode observar.
+  
+# Projeto em fase de desenvolvimento (rodando localmente):
+  Com o respectivo projeto back-end configurado e rodando localmente, lembrar de verificar em \src\app\services\api.service.ts, o valor de baseUrl ('http://localhost:8080');
+  
+  Usar o comando `ng serve` e navegar para `http://localhost:4200/`.
 
   Neste momento basta usar as credenciais fixadas (username = 'userAdmin' e password = 'admin@123') para poder realizar o login e testar a aplicação.
 
